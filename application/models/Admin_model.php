@@ -74,7 +74,7 @@ class Admin_model extends CI_Model
         'image' => $link
         );
         
-        $this->db->insert('barang', $data);
+        $this->db->insert('barang_abdiel', $data);
     }
 
     public function savegerai()
@@ -88,13 +88,13 @@ class Admin_model extends CI_Model
             'hak_akses' => '0'
             );
             
-            $this->db->insert('user', $data);
+            $this->db->insert('user_abdiel', $data);
     }
-    
+
     public function tampilbarang()
     {
         $this->db->select('*');
-        $this->db->from('barang');
+        $this->db->from('barang_abdiel');
         
         $query = $this->db->get();
         return $query->result_array();

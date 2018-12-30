@@ -40,16 +40,21 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('Admin/Daftar_Produk'); ?>">
-              <i class="menu-icon mdi mdi-backup-restore"></i>
-              <span class="menu-title">Daftar Produk</span>
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="menu-icon mdi mdi-restart"></i>
+              <span class="menu-title">Produk</span>
+              <i class="menu-arrow"></i>
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('Admin/Tambah_Produk');?>">
-              <i class="menu-icon mdi mdi-chart-line"></i>
-              <span class="menu-title">Tambah Produk</span>
-            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="<?php echo base_url('Admin/Daftar_Produk'); ?>">Daftar Produk</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="<?php echo base_url('Admin/Tambah_Produk'); ?>">Tambah Produk</a>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
       </nav>

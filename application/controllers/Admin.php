@@ -39,7 +39,7 @@ class Admin extends CI_Controller {
 	public function Daftar_Gerai()
 	{
 		$where = array('hak_akses' => '0');
-		$data=$this->Admin_model->tampilgerai('user',$where);
+		$data=$this->Admin_model->tampilgerai('user_abdiel',$where);
 		$data=array('data'=>$data);
 		$this->load->view('admin/Daftar_Gerai',$data);
 	}
@@ -106,7 +106,7 @@ class Admin extends CI_Controller {
 	public function hapusproduk($id)
 	{
 		$where = array('kd_brg' => $id);
-		$data=$this->Admin_model->hapusproduk('barang',$where);
+		$data=$this->Admin_model->hapusproduk('barang_abdiel',$where);
 		if($data){
 			$this->session->set_flashdata('success', 'BERHASIL MENGHAPUS');
 			redirect(base_url('Admin/Daftar_Produk'));
