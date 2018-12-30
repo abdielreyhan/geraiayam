@@ -82,7 +82,7 @@ class Admin_model extends CI_Model
         $data = array(
             'username' => $this->input->post('NamaGerai'),
             'email' => $this->input->post('email'),
-            'password' =>md5( $this->input->post('Pass')),
+            'password' =>$this->input->post('Pass'),
             'no_tlp' => $this->input->post('tlp'),
             'lokasi' => $this->input->post('lokasi'),
             'hak_akses' => '0'
