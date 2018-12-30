@@ -38,9 +38,23 @@ class Admin extends CI_Controller {
 
 	public function Daftar_Gerai()
 	{
-		$data=$this->Admin_model->tampilbarang();
+		$where = array('hak_akses' => '0');
+		$data=$this->Admin_model->tampilgerai('user',$where);
 		$data=array('data'=>$data);
 		$this->load->view('admin/Daftar_Gerai',$data);
+	}
+
+	public function prosestambahgerai()
+	{
+		if ($this->input->post('Pass') == $this->input->post('Pass1'))
+		{
+			$this->Admin_model->savegerai();
+			redirect('admin/Daftar_Gerai');
+		}
+		else
+		{
+			$this->load->view('admin/Tambah_Gerai');
+		}
 	}
 
 	public function Tambah_Gerai()
