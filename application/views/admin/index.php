@@ -55,9 +55,8 @@
                       <div class="fluid-container">
                         <h3 class="font-weight-medium text-right mb-0">
                           <?php
-                            $this->db->select('*');
-                            $this->db->from('user_abdiel');
-                            $order = $this->db->get();
+                          $where = array('hak_akses' => '0');
+                            $order = $query = $this->db->get_where('user_abdiel',$where);
                             echo $order->num_rows();
                           ?>
                         </h3>
